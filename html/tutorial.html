@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Návod | Kotlin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- custom style -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/tutorial.css" />
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Libre+Franklin|Roboto:300,400,500" rel="stylesheet"> 
+    <!-- material-components-web imports -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/material-components-web.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../js/material-components-web.min.js"></script>
+    <!-- Highlight.js imports - for Kotlin and Java syntax highighting -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/highlight.css" />
+    <script src="../js/highlight.pack.js"></script>
+</head>
+<body>
+    <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__content">
+            <nav class="mdc-list">
+                <a class="mdc-list-item" href="../index.html">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+                    <span class="mdc-list-item__text">Úvod</span>
+                </a>
+                <a class="mdc-list-item mdc-list-item--activated" aria-selected="true">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
+                    <span class="mdc-list-item__text">Návod</span>
+                </a>
+                <a class="mdc-list-item" href="gallery.html">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">photo_library</i>
+                    <span class="mdc-list-item__text">Galéria</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+    <div class="mdc-drawer-scrim"></div>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <img id="kotlin-logo-sm" src="../img/kotlin_logo.svg">
+                <a class="material-icons mdc-top-app-bar__navigation-icon menu-icon">menu</a>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end nav-container">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="../index.html" class="nav-item-link mdc-button ripple">Úvod</a></li>
+                    <li class="nav-item"><a href="#" class="mdc-button nav-item-selected nav-item-link ripple">Návod</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="mdc-button nav-item-link ripple">Galéria</a></li>
+                </ul>
+            </section>
+        </div>
+    </header>
+    <div class="mdc-top-app-bar--fixed-adjust">
+        <div class="content">
+            <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="page-title">Ako programovať v Kotline?</h1>
+                        <h2>Základná syntax</h2>
+                        <pre><code class="kotlin">// Zadefinovanie premennej, ktorá je immutable (nedá sa už meniť jej hodnota)
+val number: Int = 15
+                            
+// Kotlin má aj type inference, ak je teda typ zjavný, netreba ho písať
+val secondNumber = 4
+                                
+// Ak je napísaný typ, val môže mať hodnotu pridelenú aj neskôr
+val thirdNumber: Int
+thirdNumber = 11
+                                
+// Zadefinovanie premennej, ktorá je mutable (jej hodnota sa dá meniť)
+var user: String = "firefoxrebuff"
+                                
+// Funkcia, ktorá požaduje 2 parametre Int a vracia Int
+fun sum(a: Int, b: Int): Int {
+    return a + b
+}
+                                
+// Takáto funkcia sa dá zjednodušiť na výraz
+fun sum(a: Int, b: Int) = a + b
+                                
+// Ekvivalent switchu z iných jazykov je when, používa tzv. lambda výrazy
+fun isUserLoggedIn(userId: Int) = when (UserService.getStatus(userId)) {
+    "loggedOut", "unavailable"  -> false
+    "banned" -> {
+        print("You are banned")
+        false
+    }
+    "loggedIn"                  -> true
+}
+                                
+// Funkcie, ktoré nevracajú žiadnu hodnotu, buď vracajú Unit alebo sa nepíše nič
+fun printText(a: String): Unit {
+    println(a)
+}
+                                
+fun printText(a: String) {
+    println(a)
+}
+                                
+// "For" cyklus
+val items = listOf("a","b","c")
+for (item in items) {
+    println(item)
+}
+                                
+// Ekvivalent range z Pythonu
+for (i in 0..10) {
+    println(2^i.toFloat())
+}
+                                
+// Dá sa to skrátiť aj do jedného riadku
+for (i in 0..10) println(2^i.toFloat())
+                                
+// Ak môže byť premenná null, za názov typu sa píše otáznik
+// Inštancia triedy sa získava pomocou syntaxe MenoTriedy()
+var player: Player = Player()
+player = null
+                                
+fun getPlayer(): Player? {
+    // Ak player != null, vráti player, inak vráti playerService.getPlayer()
+    return player ?: playerService.getPlayer()
+}</code></pre>
+                        <h2 class="margin-top">Porovnanie Javy a Kotlinu</h2>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Java</th>
+                                        <th>Kotlin</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><pre>int a = 10;</pre></td>
+                                        <td><pre class="list-multiline">val a = 10</pre> alebo <pre class="list-multiline">var a: Int = 10</pre></td>
+                                    </tr>
+                                    <tr>
+                                        <td><pre>public void sendInfo() {...}</pre></td>
+                                        <td><pre>fun sendInfo() {...}</pre></td>
+                                    </tr>
+                                    <tr>
+                                        <td><pre>Player player = new Player();</pre></td>
+                                        <td><pre>val player = Player()</pre></td>
+                                    </tr>
+                                    <tr>
+                                        <td><pre>for (int i = 0; i <= 10; i++) {...}</pre></td>
+                                        <td><pre>for (i in 0..10) {...}</pre></td>
+                                    </tr>
+                                    <tr>
+                                        <td><pre class="red">java.lang.NullPointerException</pre></td>
+                                        <td>nič (no ak si to programátor vypýta, tak <pre class="list-multiline red">kotlin.NullPointerException</pre>)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h2 class="margin-top">Ukážková aplikácia</h2>
+                        <p>Teraz si ukážeme, ako si nastaviť IntelliJ IDEA na vývoj v Kotline a vytvoríme jednoduchý program podľa zadania. Nie je potrebné použiť toto IDE, no keďže je vyrobené tou istou firmou, ktorá vytvorila Kotlin, obsahuje rôzne funkcie, ktoré uľahčujú používanie. Dá sa použiť aj compiler kotlinc, ktorý sa dá stiahnuť zo <a href="https://kotlinlang.org" target="_blank">stránky Kotlinu</a>. Ak si ale chcete stiahnuť IntelliJ IDEA, môžete tak urobiť <a href="https://www.jetbrains.com/idea/" target="_blank">tu</a>.</p>
+                        <p>Keď otvoríme IntelliJ, zobrazí sa táto obrazovka. V nej je potrebné vybrať <em>Create New Project</em>.</p>
+                        <img class="img-tutorial" src="../img/tutorial_01.png">
+                        <p>V okne <em>New Project</em> vyberieme vľavo jazyk Kotlin a potom cieľ, na ktorý chceme skompilovať program. Pre tento návod využijeme <em>Kotlin/JVM</em>.</p>
+                        <img class="img-tutorial" src="../img/tutorial_02.png">
+                        <p>Následne si nazveme projekt a zadáme jeho umiestnenie (<em>Project name</em> a <em>Project location</em>). Niekedy je potrebné aj v <em>Project SDK</em> vybrať umiestnenie Java JDK. Kliknite <em>Finish</em> a otvorí sa IDE.</p>
+                        <img class="img-tutorial" src="../img/tutorial_03.png">
+                        <p>Okno IDE by malo vyzerať nasledovne.</p>
+                        <img class="img-tutorial" src="../img/tutorial_04.png">
+                        <p>Teraz si potrebujeme vytvoriť súbor, v ktorom bude náš kód. Klikneme pravým tlačidlom na src, vyberieme <em>Create New File</em> a <em>Kotlin File/Class</em>.</p>
+                        <img class="img-tutorial" src="../img/tutorial_05.png">
+                        <p>Zadáme názov súboru (väčšinou sa používa <em>Main.kt</em>) a potvrdíme.</p>
+                        <img class="img-tutorial" src="../img/tutorial_06.png">
+                        <p>Teraz už môžeme napísať program. Základný program Hello World vyzerá v Kotline nasledovne:</p>
+                        <img class="img-tutorial" src="../img/tutorial_07.png">
+                        <p>Program musíme prvýkrát spustiť kliknutím na zelenú šípku a výberom <em>Run 'MainKt'</em>.</p>
+                        <img class="img-tutorial" src="../img/tutorial_08.png">
+                        <p>Keď sa program skompiluje, automaticky sa spustí a otvorí sa spodná lišta <em>Run</em>. Okno IDE by malo vyzerať nejak takto.</p>
+                        <img class="img-tutorial" src="../img/tutorial_09.png">
+                        <p>Teraz si môžeme napísať jednoduchý program podľa zadania. Možno ho budete poznať.</p>
+                        <p class="task">Banka má 10 000 eur, pričom si môžeme požičať do 500 eur. Pokiaľ banka nebude mať trikrát po sebe peniaze, zavrie sa.</p>
+                        <p>Takýto program vyzerá nasledovne (kód je vyznačený aj s vysvetlivkami):</p>
+                        <pre><code class="kotlin">// Potrebujeme použiť Scanner z knižnice java.util, musíme ho teda importovať
+import java.util.Scanner
+
+// Každý program musí mať main() funkciu
+fun main(args: Array<String>) {
+    // Obe premenné musia byť "var", pretože ich hodnota sa bude v priebehu programu meniť
+    var strikes: Int = 0
+    var peniazeBanka: Int = 10000
+    while (strikes < 3) {
+        // Ak chceme do Stringu vložiť iný typ, ktorý sa premení na String, môžeme použiť znak $
+        println("Banka má $peniazeBanka eur.")
+        // Je potrebné použiť znaky ``, pretože "in" je v Kotline kľúčové slovo
+        println("Zadajte sumu do 500 eur vrátane.")
+        // Vytvoríme objekt Scanner, ktorý vie získavať vstup od používateľa
+        val input = Scanner(System.`in`)
+        // Zo Scanneru vypýtame vstup, ktorý musí byť vo forme Int
+        val suma = input.nextInt()
+        if (suma <= 0) {
+            println("Musíte si aj niečo požičať.")
+        } else if (suma <= 500 && suma <= peniazeBanka) {
+            println("Úver vo výške $suma eur bol schválený.")
+            peniazeBanka -= suma
+        } else if (suma > 500) {
+            println("Úver vo výške $suma eur nebol schválený. Požičajte si menej.")
+        } else {
+            strikes += 1
+            // Do Stringu môžeme vložiť aj výpočet, no vtedy ho musíme ohraničiť ${zátvorkami}
+            println("Úver vo výške $suma eur nebol schválený. Môžete si skúsiť požičať ešte ${3-strikes} krát.")
+        }
+    }
+    println("Banka už nemá peniaze. Dovidenia.")
+}</code></pre>
+                        <p>Tento kód už môžeme spustiť aj stlačením zelenej šípky v pravom hornom rohu programu.</p>
+                        <img class="img-tutorial" src="../img/tutorial_10.png">
+                        <p>Do <em>Run</em> konzoly je možné aj vpisovať, takže nami vytvorený kód bude fungovať asi nejak takto:</p>
+                        <img class="img-tutorial" src="../img/tutorial_11.png">
+                        <p>Keď nám dôjdu peniaze, banka sa zavrie a program sa ukončí so správou <pre class="list-multiline">Process finished with exit code 0</pre>.</p>
+                        <img class="img-tutorial" src="../img/tutorial_12.png">
+                        <p>Ak chcete viac informácii, pozrite si dokumentáciu Kotlinu pomocou tlačidla nižšie.</p>
+                        <p><a href="http://kotlinlang.org/docs/reference/" target="_blank" class="mdc-button ripple mdc-button--outlined">Dokumentácia Kotlinu</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Vytvoril Matej Stieranka, Rudohorská 9, 974 11 Banská Bystrica | matej@stieranka.eu | 2018-2019</p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>

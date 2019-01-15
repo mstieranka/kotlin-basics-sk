@@ -1,0 +1,112 @@
+p.center {
+  text-align: center;
+}
+
+.icon_center {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.icon_container {
+  text-align: center;
+}
+
+.background {
+  background: black;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.jumbotron {
+  display: inline-block;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.jumbotron-item {
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.mdc-button.mdc-button--outlined.mdc-button-white {
+  padding: 0 24px;
+  background: linear-gradient(to top, white 50%, black 50%);
+  background-size: 100% 200%;
+  background-position: left top;
+  transition: all 0.2s ease-out;
+  border-color: white;
+  color: white;
+}
+
+.mdc-button.mdc-button--outlined.mdc-button-white:hover {
+  background-position: left bottom;
+  color: black;
+}
+
+h1.jumbotron-title {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 6em;
+}
+
+p.jumbotron-subtitle {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 16px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  max-width: 400px;
+}
+
+#jumbotron-extra-padding {
+  padding: 16px 0;
+  padding-left: 32px;
+}
+
+#kotlin-logo-lg {
+  height: 300px;
+  padding: 16px;
+}
+
+#index-header {
+  background: black;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+@media (max-width: 599px) {
+  .jumbotron {
+    padding: 0;
+    width: 100vw;
+  }
+
+  .jumbotron-item {
+    padding: 0 20vw;
+    width: 60vw;
+  }
+
+  #kotlin-logo-lg {
+    height: 60vw;
+    padding-left: 0;
+  }
+
+  h1.jumbotron-title {
+    font-size: 3em;
+  }
+
+  p.jumbotron-subtitle {
+    font-size: 1.5em;
+  }
+}

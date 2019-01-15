@@ -1,0 +1,56 @@
+p.task {
+  border-left: 4px solid #ccc;
+  padding-left: 8px;
+}
+
+.img-tutorial {
+  max-width: 100%;
+}
+
+pre.red {
+  color: red;
+}
+
+table {
+  margin-top: 16px;
+  border-collapse: collapse;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+tr > th {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.25em;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+tr:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+td {
+  padding: 0 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.margin-top {
+  margin-top: 24px;
+}
+
+.list-multiline {
+  display: inline;
+}
+
+pre {
+  font-family: "Inconsolata", monospace;
+}
+
+pre > code.hljs {
+  padding: 16px;
+  border-radius: 4px;
+}

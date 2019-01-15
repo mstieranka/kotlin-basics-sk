@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Úvod | Kotlin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- custom style -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Libre+Franklin|Roboto:300,400,500" rel="stylesheet"> 
+    <!-- material-components-web imports -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/material-components-web.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="js/material-components-web.min.js"></script>
+</head>
+<body>
+    <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__content">
+            <nav class="mdc-list">
+                <a class="mdc-list-item mdc-list-item--activated" aria-selected="true">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+                    <span class="mdc-list-item__text">Úvod</span>
+                </a>
+                <a class="mdc-list-item" href="html/tutorial.html">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
+                    <span class="mdc-list-item__text">Návod</span>
+                </a>
+                <a class="mdc-list-item" href="html/gallery.html">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">photo_library</i>
+                    <span class="mdc-list-item__text">Galéria</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+    <div class="mdc-drawer-scrim"></div>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="index-header">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <img id="kotlin-logo-sm" src="img/kotlin_logo.svg">
+                <a class="material-icons mdc-top-app-bar__navigation-icon menu-icon">menu</a>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end nav-container">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="" class="nav-item-link nav-item-selected mdc-button ripple">Úvod</a></li>
+                    <li class="nav-item"><a href="html/tutorial.html" class="mdc-button nav-item-link ripple">Návod</a></li>
+                    <li class="nav-item"><a href="html/gallery.html" class="mdc-button nav-item-link ripple">Galéria</a></li>
+                </ul>
+            </section>
+        </div>
+    </header>
+    <div class="mdc-top-app-bar--fixed-adjust">
+        <div class="background">
+            <div class="jumbotron">
+                <!-- Kotlin logo -->
+                <div class="jumbotron-item">
+                    <img id="kotlin-logo-lg" src="img/kotlin_logo.svg">
+                </div>
+                <div class="jumbotron-item" id="jumbotron-extra-padding">
+                    <!-- Title -->
+                    <h1 class="jumbotron-title">Kotlin</h1>
+                    <!-- Subtitle -->
+                    <p class="jumbotron-subtitle">Staticky typovaný programovací jazyk pre moderné aplikácie</p>
+                    <!-- Learn More button - links to tutorial -->
+                    <a href="html/tutorial.html" class="mdc-button mdc-button--outlined mdc-button-white" id="find-more">Zistiť viac</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                    <!-- First part -->
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h2>Aký je účel tejto stránky?</h2>
+                        <p>Účelom tejto stránky je poskytnúť jednoduchý zdroj, z ktorého sa dajú naučiť základy programovacieho jazyka Kotlin. Základná znalosť Javy je určite výhodou, no nie je potrebná.</p>
+                    </div>
+                    <!-- Second part -->
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h2>Aké sú výhody Kotlinu?</h2>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-tablet">
+                        <i class="material-icons icon_center">short_text</i>
+                        <h3>Stručnejší oproti Jave</h3>
+                        <p class="center">Vytvoriť objekt sa dá jedným riadkom, lambda výrazy znížia dĺžku o 10 riadkov pri každom použití a na vytvorenie singletonu stačí pár riadkov.</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-tablet">
+                        <i class="material-icons icon_center">security</i>
+                        <h3>Bezpečný</h3>
+                        <p class="center">Objekt môže mať hodnotu "null" iba pokiaľ je to vopred určené, inak nastane chyba už pri kompilácii. Takisto sa dá kontrolovať, či je možné zmeniť hodnotu premennej.</p>
+                    </div>
+                    <div class="icon_container mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-tablet">
+                        <img src="img/transit-connection-variant.svg">
+                        <h3>Spolupracuje s Javou</h3>
+                        <p class="center">Kotlin nemá nevýhody nových jazykov, pretože funguje so všetkými knižnicami napísanými v Jave. Knižnice v Kotline sa zas dajú použíť v Jave a v jednej aplikácii môžu byť dokonca použíté oba jazyky naraz.</p>
+                    </div>
+                    <!-- Third part -->
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h2>Na čo sa dá Kotlin využiť?</h2>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <i class="material-icons icon_center">android</i>
+                        <h3>Android aplikácie</h3>
+                        <p class="center">Kotlin je od roku 2017 oficiálne podporovaný Googlom na vývoj pre Android a všetky knižnice Googlu sú prispôsobené na používanie s Kotlinom. Nové knižnice, ako napríklad Android KTX omnoho uľahčujú písanie Android aplikácii v porovnaní s Javou.</p>
+                    </div>
+                    <div class="icon_container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <img src="img/language-java.svg">
+                        <h3>Cross-platform aplikácie</h3>
+                        <p class="center">Kotlin je plne kompatibilný s Javou a kompiluje sa do JVM. S pomocou frameworkov ako JavaFX (či varianty TornadoFX prispôsobenej pre Kotlin) je vytvorenie aplikácii pre Windows, Linux alebo macOS naozaj jednoduché.</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <i class="material-icons icon_center">web</i>
+                        <h3>Webstránky</h3>
+                        <p class="center">Kotlin je možné kompilovať aj do JavaScriptu, dokáže teda skrátiť a zjednodušiť frontend kód. Okrem toho je možné použiť napr. Spring a v Kotline naprogramovať backend. Ide teda o jeden z mála jazykov, v ktorých je možné tvoriť full-stackovo.</p>
+                    </div>
+                    <div class="icon_container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <img src="img/apple.svg">
+                        <h3>iOS aplikácie</h3>
+                        <p class="center">Vďaka Kotlin/Native je možné vytvoriť aplikáciu, ktorá bude skompilovaná na Swift či Objective-C. Kotlin dokáže plne spolupracovať aj s knižnicami pre tieto jazyky, či dokonca aj jazyk C.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Vytvoril Matej Stieranka, Rudohorská 9, 974 11 Banská Bystrica | matej@stieranka.eu | 2018-2019</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Galéria | Kotlin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- custom style -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/gallery.css" />
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Libre+Franklin|Roboto:300,400,500" rel="stylesheet"> 
+    <!-- material-components-web imports -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/material-components-web.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../js/material-components-web.min.js"></script>
+    <!-- Micromodal - for photo description popups -->
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+</head>
+<body>
+    <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__content">
+            <nav class="mdc-list">
+                <a class="mdc-list-item" href="../index.html">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+                    <span class="mdc-list-item__text">Úvod</span>
+                </a>
+                <a class="mdc-list-item" href="tutorial.html">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
+                    <span class="mdc-list-item__text">Návod</span>
+                </a>
+                <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">photo_library</i>
+                    <span class="mdc-list-item__text">Galéria</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+    <div class="mdc-drawer-scrim"></div>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <img id="kotlin-logo-sm" src="../img/kotlin_logo.svg">
+                <a class="material-icons mdc-top-app-bar__navigation-icon menu-icon">menu</a>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end nav-container">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="../index.html" class="nav-item-link mdc-button ripple">Úvod</a></li>
+                    <li class="nav-item"><a href="tutorial.html" class="mdc-button nav-item-link ripple">Návod</a></li>
+                    <li class="nav-item"><a href="#" class="mdc-button nav-item-selected nav-item-link ripple">Galéria</a></li>
+                </ul>
+            </section>
+        </div>
+    </header>
+    <div class="mdc-top-app-bar--fixed-adjust">
+        <div class="content">
+            <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                    <!-- Title -->
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="page-title">Čo sa dá vytvoriť v Kotline?</h1>
+                        <p>Pre viac informácii o danej aplikácii kliknite na obrázok.</p>
+                    </div>
+                    <!-- The gallery itself -->
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--1" data-micromodal-trigger="modal-1">
+                        <p class="gallery-description">Keepsafe App Lock</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--2" data-micromodal-trigger="modal-2">
+                        <p class="gallery-description">Corda</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--3" data-micromodal-trigger="modal-3">
+                        <p class="gallery-description">TornadoFX</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--4" data-micromodal-trigger="modal-4">
+                        <p class="gallery-description">Coursera</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--5" data-micromodal-trigger="modal-5">
+                        <p class="gallery-description">IntelliJ IDEA</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--6" data-micromodal-trigger="modal-6">
+                        <p class="gallery-description">Trello</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--7" data-micromodal-trigger="modal-7">
+                        <p class="gallery-description">KotlinConf (iOS)</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--8" data-micromodal-trigger="modal-8">
+                        <p class="gallery-description">KotlinConf (Android)</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 gallery-img gallery-img--9" data-micromodal-trigger="modal-9">
+                        <p class="gallery-description">Kotlin/Native C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Vytvoril Matej Stieranka, Rudohorská 9, 974 11 Banská Bystrica | matej@stieranka.eu | 2018-2019</p>
+    </footer>
+    <!-- Modals -->
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-1-title">
+                        Keepsafe App Lock
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-1-content">
+                    <img class="modal__img" src="../img/gallery_applock.png">
+                    <div class="modal__text">
+                        <p>Aplikácia Keepsafe App Lock pre Android je kompletne naprogramovaná v Kotline.</p>
+                        <p>Jeden z vývojárov tejto aplikácie na blogu zverejnil svoje skúsenosti s Kotlinom, a prepísanie
+                            App Locku z Javy do Kotlinu znížilo počet metód o 10% a počet riadkov kódu až o 30%! To dokáže
+                            zjednodušiť čitateľnosť kódu aj jeho správu do budúcna. Okrem toho dokáže podľa AJ Alta Kotlin
+                            nahradiť aj rôzne užitočné knižnice pre Javu a Android, ako napríklad Guava, Retrolambda alebo
+                            ButterKnife.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.getkeepsafe.applock" target="_blank"
+                            class="mdc-button ripple mdc-button--outlined">Stiahnuť App Lock</a>
+                        <a href="https://medium.com/keepsafe-engineering/lessons-from-converting-an-app-to-100-kotlin-68984a05dcb6"
+                            target="_blank" class="mdc-button ripple mdc-button--outlined">Otvoriť článok</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-2-title">
+                        Corda
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-2-content">
+                    <img class="modal__img" src="../img/gallery_corda.png">
+                    <div class="modal__text">
+                        <p>Corda je open-source blockchain platforma, ktorá je už od svojho vzniku zameraná na bezpečnosť
+                            transakcií vo firemnom prostredí.</p>
+                        <p>Tento projekt je od začiatku naprogramovaný v Kotline. Jeho výhody v tomto projekte spočívajú
+                            hlavne v tzv. korutinách (coroutines). Ide o spôsob, ktorým sa dá v Kotline zvládnuť
+                            asynchrónny kód, pričom v porovnaní s Javou sú korutiny menej náročné a teda je ich možné
+                            spustiť omnoho viac naraz. Práve vďaka tomu využívajú Cordu aj veľké banky, ktoré potrebujú
+                            spracovať milióny požiadaviek denne. Kompatibilita s Javou či inými jazykmi pre JVM zas
+                            umožňuje jednoduché prepojenie s inými programami.</p>
+                        <a href="https://www.corda.net/" target="_blank" class="mdc-button ripple mdc-button--outlined">Navštíviť
+                            stránku</a>
+                        <a href="https://github.com/corda/corda" target="_blank" class="mdc-button ripple mdc-button--outlined">Prezrieť
+                            kód</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="modal-3" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-3-title">
+                        TornadoFX
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-3-content">
+                    <img class="modal__img" src="../img/gallery_tornadofx.png">
+                    <div class="modal__text">
+                        <p>TornadoFX je variantou známeho frameworku JavaFX, ktorý je určený na tvorbu cross-platform
+                            aplikácii.</p>
+                        <p>Tento framework je špeciálne prispôsobený na používanie spolu s Kotlinom, a má preto mnoho
+                            nových funkcii. Vytváranie používateľského prostredia pomocou kódu je jednoduchšie a jednotlivé
+                            prvky je možné dizajnovo upraviť pomocou CSS. Pokiaľ ale nechcete používať DSL v kóde, môžete
+                            použiť aj FXML, čo je v TornadoFX síce nepreferovaná, ale stále podporovaná forma tvorby
+                            rozhrania.</p>
+                        <a href="https://tornadofx.io/" target="_blank" class="mdc-button ripple mdc-button--outlined">Navštíviť
+                            stránku</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="modal-4" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-4-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-4-title">
+                        Coursera
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-4-content">
+                    <img class="modal__img" src="../img/gallery_coursera.png">
+                    <div class="modal__text">
+                        <p>Coursera je služba, ktorá ponúka mnoho kurzov na rôzne témy. Umožňuje výučbu mnohých predmetov,
+                            vrátane programovania, a to úplne zadarmo.</p>
+                        <p>Android aplikácia Coursery je pritom sčasti naprogramovaná v jazyku Kotlin. Keďže sa Kotlin
+                            viacerými funkciami podobá na Swift, ktorý sa používa na vývoj iOS aplikácii, všetci
+                            programátori pracujú na aplikáciách ako pre iOS, tak aj pre Android. Ako napísal jeden zo
+                            zamestnancov na svojom blogu, ľudia tak môžu získať skúsenosti s prácou pre iný operačný systém
+                            a vďaka tomu vedia pracovať rýchlejšie a efektívnejšie. Plus, Kotlin robí kód omnoho
+                            čitateľnejším.</p>
+                        <a href="https://www.coursera.org" target="_blank" class="mdc-button ripple mdc-button--outlined">Navštíviť
+                            stránku</a>
+                        <a href="https://medium.com/coursera-engineering/becoming-bilingual-coursera-d8048dce73e3" target="_blank"
+                            class="mdc-button ripple mdc-button--outlined">Otvoriť článok</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="modal-5" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-5-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-5-title">
+                        IntelliJ IDEA
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-5-content">
+                    <img class="modal__img" src="../img/gallery_intellij_koans.png">
+                    <div class="modal__text">
+                        <p>IntelliJ IDEA je vývojárske prostredie (IDE) od spoločnosti JetBrains, ktorá vytvorila Kotlin. Ten je určený práve na vývoj podobných aplikácii, keďže takýto program má obrovský zdrojový kód, ktorý nie je len tak možné zmeniť na iný programovací jazyk. Nové funkcie IntelliJ sú ale písané v Kotline.</p>
+                        <p>Okrem toho ponúka toto IDE aj tzv. Kotlin Koans. Ide o cvičenia, ktorých cieľom je naučiť používateľa syntax Kotlinu pomocou rôznych cvičení. Na začiatku cvičenia je v kóde vždy nejaká chyba (alebo kód chýba úplne) a úlohou je tento kód spojazdniť podľa zadania. Koans je ale možné robiť aj online, a to na stránke Kotlinu.</p>
+                        <a href="https://www.jetbrains.com/idea/" target="_blank" class="mdc-button ripple mdc-button--outlined">Stiahnuť IntelliJ</a>
+                        <a href="https://play.kotlinlang.org/koans" target="_blank"
+                            class="mdc-button ripple mdc-button--outlined">Pozrieť Koans online</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="modal-6" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-6-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-6-title">
+                        Trello
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-6-content">
+                    <img class="modal__img" src="../img/gallery_trello.jpg">
+                    <div class="modal__text">
+                        <p>Trello je online to-do list, podobá sa teda službám ako Google Keep. Má ale kreatívny prístup v tom, že jednotlivé úlohy sú na "nástenkách", v ktorých sa nachádzajú zoznamy s kartami. Ide o výborný spôsob manažovania úloh podľa kategórii, a práve preto je Trello využívané hlavne firmami.</p>
+                        <p>Android tím Trella sa rozhodol pomaly, ale isto celú aplikáciu prepísať do Kotlinu. Začali písaním unit testov, no časom začal podiel tohto jazyka stúpať. Posledné čísla boli zverejnené pred rokom, kedy bolo v Kotline napísaných už 30% aplikácie.</p>
+                        <a href="https://trello.com" target="_blank" class="mdc-button ripple mdc-button--outlined">Navštíviť
+                            stránku</a>
+                        <a href="https://tech.trello.com/kotlin-at-trello/" target="_blank"
+                            class="mdc-button ripple mdc-button--outlined">Otvoriť článok</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="modal-7" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-7-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-7-title">
+                        KotlinConf (iOS)
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-7-content">
+                    <img class="modal__img" src="../img/gallery_kotlinconf.png">
+                    <div class="modal__text">
+                        <p>Okrem využívania Kotlinu na vývoj IntelliJ sa firma JetBrains rozhodla vytvoriť stránku a aplikácie pre každoročnú konferenciu KotlinConf. Aby toho nebolo málo, v Kotline je absolútne všetko - Android aplikácia, iOS aplikácia, frontend (JavaScript) aj backend serveru.</p>
+                        <p>Na výrobu iOS aplikácie bol použitý Kotlin/Native, framework, ktorý umožňuje kód v Kotline skompilovať do jazyka C alebo Objective-C. Keďže Swift, ktorý sa dnes používa na výrobu iOS aplikácii, má stále podporu Objective-C, vytvorenie Kotlin aplikácie v Xcode nie je vôbec ťažké. Dokonca je možné zdieľať kód s Android aplikáciou či PWA (Progressive Web App) pre iné platformy.</p>
+                        <a href="https://kotlinconf.com" target="_blank" class="mdc-button ripple mdc-button--outlined">Navštíviť
+                            stránku</a>
+                        <a href="https://github.com/JetBrains/kotlinconf-app/tree/master/konfios" target="_blank"
+                            class="mdc-button ripple mdc-button--outlined">Prezrieť kód</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="modal-8" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-8-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-8-title">
+                        KotlinConf (Android)
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-8-content">
+                    <img class="modal__img" src="../img/gallery_kotlinconf2.png">
+                    <div class="modal__text">
+                        <p>Okrem využívania Kotlinu na vývoj IntelliJ sa firma JetBrains rozhodla vytvoriť stránku a aplikácie pre každoročnú konferenciu KotlinConf. Aby toho nebolo málo, v Kotline je absolútne všetko - Android aplikácia, iOS aplikácia, frontend (JavaScript) aj backend serveru.</p>
+                        <p>Android aplikácia využíva 100% Kotlin, pretože je kompatibilný s Javou a od roku 2017 je aj oficiálne podporovaný Googlom na vývoj aplikácii. Firma JetBrains s Googlom spolupracuje na tvorbe viacerých funkcii, či knižníc, a práve preto je v KotlinConf aplikácii použitá knižnica Anko, pomocou ktorej je zjednodušené všetko, od dizajnu až po asynchrónne spracovanie dát.</p>
+                        <a href="https://kotlinconf.com" target="_blank" class="mdc-button ripple mdc-button--outlined">Navštíviť
+                            stránku</a>
+                        <a href="https://github.com/JetBrains/kotlinconf-app/tree/master/android" target="_blank"
+                            class="mdc-button ripple mdc-button--outlined">Prezrieť kód</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="modal-9" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-9-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-9-title">
+                        Kotlin/Native C
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-9-content">
+                    <img class="modal__img" src="../img/gallery_kotlinnative.png">
+                    <div class="modal__text">
+                        <p>Kotlin/Native predstavuje druhý spôsob, pomocou ktorého je možné vytvoriť cross-platform aplikácie. Ide o kompiler, ktorý umožňuje získať spustiteľné súbory pre iOS, macOS, Android, Windows, Linux a dokonca aj WebAssembly.</p>
+                        <p>Na obrázku je zobrazená ukážková aplikácia vytvorená v Kotlin/Native. Tento program je možné skompilovať pre všetky tri desktopové operačné systémy, pričom používateľské rozhranie bude vyzerať natívne. Okrem toho je možné zdieľať kód medzi rôznymi platformami.</p>
+                        <a href="https://kotlinlang.org/docs/reference/native-overview.html" target="_blank"
+                            class="mdc-button ripple mdc-button--outlined">Zobraziť dokumentáciu</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/main.js"></script>
+</body>
+</html>
