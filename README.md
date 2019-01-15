@@ -1,1 +1,1 @@
-"# kotlin-basics-sk" 
+# kotlin-basics-sk
